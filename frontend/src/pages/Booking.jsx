@@ -48,7 +48,7 @@ const Booking = () => {
       <header className="header-nav">
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
           <div className="logo" style={{ fontFamily: 'SF Mono, monospace', fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }} onClick={() => navigate('/')}>
-            Dr. Health Audit
+            دكتور معاوية
           </div>
           <div className="nav-actions">
             <Button onClick={openWhatsApp} className="btn-secondary" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
@@ -359,7 +359,7 @@ const Booking = () => {
             هذه خدمة تعليم صحي وتوجيه، وليست بديلاً عن التشخيص أو العلاج الطبي المباشر.
           </p>
           <p className="caption" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            © 2025 Dr. Health Audit. جميع الحقوق محفوظة.
+            © 2025 دكتور معاوية. جميع الحقوق محفوظة.
           </p>
         </div>
       </footer>
