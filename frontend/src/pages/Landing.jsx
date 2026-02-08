@@ -68,7 +68,7 @@ const Landing = () => {
     },
     {
       question: 'هل أحتاج تحاليل مخبرية؟',
-      answer: 'التحاليل اختيارية لكن مفضلة. إذا كان لديك تحاليل حديثة (أقل من 6 أشهر)، يمكننا مراجعتها. إذا لم يكن لديك، سنقترح 5 فحوصات أساسية فقط - ليس عشرات التحاليل غير الضرورية.',
+      answer: 'بناءً على التقييم الأولي لحالتك، سيتم تحديد التحاليل اللازمة المناسبة لك. إذا كان لديك تحاليل حديثة، يمكننا مراجعتها والبناء عليها.',
     },
     {
       question: 'هل هذا تشخيص طبي؟',
@@ -76,7 +76,7 @@ const Landing = () => {
     },
     {
       question: 'كيف يتم الدفع؟',
-      answer: 'بعد تعبئة نموذج الحجز، سنرسل لك تفاصيل التحويل البنكي. بعد إرسال إثبات التحويل عبر واتساب، يتم تأكيد موعدك وإرسال رابط Google Meet.',
+      answer: 'بعد تعبئة نموذج الحجز، يمكنك الدفع مباشرة عبر PayPal من خلال الرابط الذي سيتم إرساله لك. بعد إتمام الدفع، سيتم تأكيد موعدك وإرسال رابط Google Meet.',
     },
     {
       question: 'متى أستلم الخطة؟',
@@ -146,7 +146,7 @@ const Landing = () => {
               ))}
             </div>
             <span className="body-small" style={{ color: 'var(--text-muted)' }}>
-              معدل رضا 4.9/5 من 120+ عميل
+              معدل رضا 4.9/5 من العشرات من العملاء
             </span>
           </div>
         </div>
@@ -164,7 +164,7 @@ const Landing = () => {
               هذا التقييم مصمم خصيصاً لك إذا كنت:
             </h2>
             <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' }}>
-              رواد الأعمال والمدراء التنفيذيين الذين يعانون من تحديات صحية تؤثر على أدائهم
+              رجال الأعمال والموظفين أصحاب المسؤوليات العالية الذين يعانون من تحديات صحية تؤثر على أدائهم
             </p>
           </div>
 
@@ -205,10 +205,10 @@ const Landing = () => {
         <div className="container" style={{ maxWidth: '1100px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
-              نتائج عملاء حقيقيين
+              نتائج العملاء
             </h2>
             <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
-              رجال أعمال ومدراء تنفيذيون حولوا صحتهم وأدائهم خلال 30 يوم
+              رجال أعمال وموظفين أصحاب مسؤوليات عالية حولوا صحتهم وأدائهم
             </p>
           </div>
 
@@ -223,19 +223,12 @@ const Landing = () => {
                 <p className="body-medium" style={{ lineHeight: 1.7, flex: 1 }}>
                   "{testimonial.text}"
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover' }}
-                  />
-                  <div>
-                    <div className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
-                      {testimonial.name}
-                    </div>
-                    <div className="body-small" style={{ color: 'var(--text-muted)' }}>
-                      {testimonial.role}
-                    </div>
+                <div style={{ marginTop: '1rem' }}>
+                  <div className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
+                    {testimonial.name}
+                  </div>
+                  <div className="body-small" style={{ color: 'var(--text-muted)' }}>
+                    {testimonial.role}
                   </div>
                 </div>
               </div>
