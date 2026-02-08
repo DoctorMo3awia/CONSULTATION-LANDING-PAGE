@@ -56,7 +56,7 @@ const Offer = () => {
     {
       step: '2',
       title: 'الدفع وتأكيد الموعد',
-      description: 'حول المبلغ وأرسل إثبات التحويل عبر واتساب. نرسل لك رابط Google Meet فوراً',
+      description: 'ادفع عبر PayPal ($119) واملأ نموذج الحجز. سنرسل لك رابط Google Meet فوراً',
     },
     {
       step: '3',
