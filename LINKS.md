@@ -11,6 +11,13 @@
 ```
 https://forms.gle/DyPhUxd2GGmgttGTA
 ```
+**ملاحظة:** لم يعد مستخدماً - تم استبداله بـ Calendly
+
+### Calendly (حجز المواعيد)
+```
+https://calendly.com/drmoawia/consultation
+```
+**الاستخدام:** يتم إرسال هذا الرابط للعميل بعد الدفع عبر PayPal
 
 ### PayPal (رابط الدفع)
 ```
