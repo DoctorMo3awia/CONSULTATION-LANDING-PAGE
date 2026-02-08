@@ -112,6 +112,30 @@ const Landing = () => {
           <h1 className="heading-hero" style={{ marginBottom: '1.2rem', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
             اكتشف العوامل الخفية التي تستنزف طاقتك وتركيزك وشكل جسمك وإنتاجيتك — واصلحها بخطة 30 يوم
           </h1>
+
+          {/* Doctor Image */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1.2rem' }}>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_gulf-exec-wellness/artifacts/6c16u5hp_Untitled.png"
+              alt="دكتور معاوية"
+              style={{ 
+                width: '70px', 
+                height: '70px', 
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '3px solid white',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+              }}
+            />
+            <div style={{ textAlign: 'right' }}>
+              <p className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
+                د. معاوية
+              </p>
+              <p className="body-small" style={{ color: 'var(--text-muted)' }}>
+                طبيب باطنية مقيم
+              </p>
+            </div>
+          </div>
           
           <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
             جلسة تقييم صحة وأداء يقودها طبيب للرجال المشغولين في الإمارات والخليج
