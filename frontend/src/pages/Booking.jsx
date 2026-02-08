@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { MessageCircle, ExternalLink } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const Booking = () => {
   const navigate = useNavigate();
@@ -17,10 +17,6 @@ const Booking = () => {
 
   const openPayPal = () => {
     window.open('https://www.paypal.com/ncp/payment/2BKK55L2RNQHY', '_blank');
-  };
-
-  const openGoogleForm = () => {
-    window.open('https://forms.gle/DyPhUxd2GGmgttGTA', '_blank');
   };
 
   return (
@@ -141,27 +137,9 @@ const Booking = () => {
               >
                 ادفع الآن — $119
               </Button>
-
-              <Button 
-                onClick={openGoogleForm} 
-                className="btn-secondary" 
-                style={{ 
-                  width: '100%',
-                  maxWidth: '400px',
-                  padding: '1.25rem 2rem',
-                  fontSize: '1rem',
-                  display: 'flex',
-                  gap: '0.5rem',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-              >
-                <ExternalLink size={20} />
-                نموذج الحجز
-              </Button>
               
               <p className="body-small" style={{ color: 'var(--text-muted)', textAlign: 'center' }}>
-                دفع آمن عبر PayPal
+                دفع آمن عبر PayPal • ستستلم رابط النموذج بعد التأكد من الدفع
               </p>
             </div>
           </div>
