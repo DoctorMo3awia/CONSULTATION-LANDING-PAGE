@@ -18,9 +18,11 @@ const Booking = () => {
 
   const openPayPal = () => {
     window.open('https://www.paypal.com/ncp/payment/2BKK55L2RNQHY', '_blank');
-    setTimeout(() => {
-      setPaymentCompleted(true);
-    }, 2000);
+    // Don't auto-show form - user needs to confirm payment via WhatsApp first
+  };
+
+  const confirmPaymentViaWhatsApp = () => {
+    window.open('https://wa.me/971555519451?text=تم%20الدفع%20عبر%20PayPal%20%F0%9F%92%B3%0A%0Aأريد%20رابط%20نموذج%20الحجز%20من%20فضلك', '_blank');
   };
 
   const openGoogleForm = () => {
