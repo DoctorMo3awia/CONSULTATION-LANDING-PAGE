@@ -6,7 +6,7 @@ import { Checkbox } from '../components/ui/checkbox';
 
 const Booking = () => {
   const navigate = useNavigate();
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [paymentCompleted, setPaymentCompleted] = useState(false);
 
   useEffect(() => {
     document.documentElement.dir = 'rtl';
@@ -17,9 +17,16 @@ const Booking = () => {
     window.open('https://wa.me/971555519451?text=تقييم', '_blank');
   };
 
+  const openPayPal = () => {
+    window.open('https://www.paypal.com/ncp/payment/2BKK55L2RNQHY', '_blank');
+    // Show the form after payment
+    setTimeout(() => {
+      setPaymentCompleted(true);
+    }, 2000);
+  };
+
   const openGoogleForm = () => {
     window.open('https://forms.gle/DyPhUxd2GGmgttGTA', '_blank');
-    setFormSubmitted(true);
   };
 
   const redFlagSymptoms = [
