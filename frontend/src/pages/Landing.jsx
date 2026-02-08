@@ -28,7 +28,7 @@ const Landing = () => {
   const features = [
     { text: 'طاقة أعلى وتركيز أوضح خلال 30 يوم', icon: CheckCircle2 },
     { text: 'نوم أفضل وتحسن ملحوظ في شكل الجسم', icon: CheckCircle2 },
-    { text: 'خطة بسيطة تتناسب مع السفر والمطاعم', icon: CheckCircle2 },
+    { text: 'خطة مخصصة لك تتناسب مع طبيعة عملك', icon: CheckCircle2 },
   ];
 
   const targetAudience = [
