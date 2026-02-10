@@ -82,19 +82,19 @@ const Landing = () => {
   ];
 
   return (
-    <div className="landing-page" style={{ background: 'var(--bg-page)' }}>
+    <div data-testid="landing-page" style={{ background: 'var(--bg-page)' }}>
       {/* Header */}
       <header className="header-nav">
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
-          <div className="logo" style={{ fontFamily: 'SF Mono, monospace', fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+          <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'white', letterSpacing: '0.01em' }}>
             دكتور معاوية
           </div>
           <div className="nav-actions">
-            <Button onClick={openWhatsApp} className="btn-secondary" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <Button data-testid="header-whatsapp-btn" onClick={openWhatsApp} className="btn-outline-light" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem' }}>
               <MessageCircle size={16} />
               واتساب
             </Button>
-            <Button onClick={scrollToBooking} className="btn-primary">
+            <Button data-testid="header-book-btn" onClick={scrollToBooking} className="btn-light" style={{ padding: '0.5rem 1.2rem' }}>
               احجز الآن
             </Button>
           </div>
@@ -102,59 +102,60 @@ const Landing = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" data-testid="hero-section">
         <div className="hero-content">
           <div className="hero-announcement">
             <Shield size={14} />
-            <span>يقودها طبيب باطنية مقيم • محدودة ل 6 مقاعد أسبوعياً</span>
+            <span>يقودها طبيب باطنية مقيم · محدودة ل 6 مقاعد أسبوعياً</span>
           </div>
           
-          <h1 className="heading-hero" style={{ marginBottom: '1.2rem', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <h1 className="heading-hero" style={{ marginBottom: '1.5rem', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto', color: 'white' }}>
             اكتشف العوامل الخفية التي تستنزف طاقتك وتركيزك وشكل جسمك وإنتاجيتك — واصلحها بخطة 30 يوم
           </h1>
 
           {/* Doctor Image */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1.2rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
             <img 
               src="https://customer-assets.emergentagent.com/job_gulf-exec-wellness/artifacts/6c16u5hp_Untitled.png"
               alt="دكتور معاوية"
+              data-testid="doctor-image"
               style={{ 
-                width: '70px', 
-                height: '70px', 
+                width: '72px', 
+                height: '72px', 
                 borderRadius: '50%',
                 objectFit: 'cover',
-                border: '3px solid white',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+                border: '3px solid rgba(255,255,255,0.3)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
               }}
             />
             <div style={{ textAlign: 'right' }}>
-              <p className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
+              <p style={{ fontWeight: 600, marginBottom: '0.2rem', color: 'white', fontSize: '1rem' }}>
                 د. معاوية
               </p>
-              <p className="body-small" style={{ color: 'var(--text-muted)' }}>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem' }}>
                 طبيب باطنية مقيم
               </p>
             </div>
           </div>
           
-          <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <p className="body-large" style={{ marginBottom: '2rem', color: 'rgba(255,255,255,0.8)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
             جلسة تقييم صحة وأداء يقودها طبيب للرجال المشغولين في الإمارات والخليج
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
+          <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
             {features.map((feature, idx) => (
               <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <feature.icon size={20} color="#1e40af" strokeWidth={2.5} />
-                <span className="body-medium">{feature.text}</span>
+                <feature.icon size={18} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
+                <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.95rem' }}>{feature.text}</span>
               </div>
             ))}
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button onClick={scrollToBooking} className="btn-primary" style={{ minWidth: '200px' }}>
+            <Button data-testid="hero-book-btn" onClick={scrollToBooking} className="btn-light" style={{ minWidth: '200px' }}>
               احجز جلسة التقييم
             </Button>
-            <Button onClick={openWhatsApp} className="btn-secondary" style={{ minWidth: '200px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
+            <Button data-testid="hero-whatsapp-btn" onClick={openWhatsApp} className="btn-outline-light" style={{ minWidth: '200px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
               <MessageCircle size={18} />
               تواصل واتساب
             </Button>
@@ -163,24 +164,25 @@ const Landing = () => {
           <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
               {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={16} fill="#FFB800" color="#FFB800" />
+                <Star key={i} size={16} fill="#fbbf24" color="#fbbf24" />
               ))}
             </div>
-            <span className="body-small" style={{ color: 'var(--text-muted)' }}>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem' }}>
               معدل رضا 4.9/5 من العشرات من العملاء
             </span>
           </div>
         </div>
 
         <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)' }}>
-          <ChevronDown size={32} color="var(--text-muted)" style={{ animation: 'bounce 2s infinite' }} />
+          <ChevronDown size={32} color="rgba(255,255,255,0.4)" style={{ animation: 'bounce 2s infinite' }} />
         </div>
       </section>
 
       {/* For Who Section */}
-      <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
+      <section data-testid="target-audience-section" style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1100px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="section-divider" />
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
               هذا التقييم مصمم خصيصاً لك إذا كنت:
             </h2>
@@ -191,18 +193,18 @@ const Landing = () => {
 
           <div className="ai-grid">
             {targetAudience.map((item, idx) => (
-              <div key={idx} className="voice-card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', background: 'linear-gradient(135deg, #ffffff 0%, #dbeafe 100%)', border: '1px solid rgba(30, 64, 175, 0.1)' }}>
+              <div key={idx} className="voice-card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <div style={{ 
                   minWidth: '40px', 
                   height: '40px', 
-                  borderRadius: '50%', 
-                  background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)', 
+                  borderRadius: '0.5rem', 
+                  background: 'var(--blue-shine)', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  fontFamily: 'SF Mono, monospace',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   color: 'white',
+                  fontSize: '0.9rem',
                   boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
                 }}>
                   {idx + 1}
@@ -215,7 +217,7 @@ const Landing = () => {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <Button onClick={scrollToBooking} className="btn-primary" style={{ minWidth: '250px' }}>
+            <Button data-testid="audience-book-btn" onClick={scrollToBooking} className="btn-primary" style={{ minWidth: '250px' }}>
               نعم، هذا أنا - احجز الآن
             </Button>
           </div>
@@ -223,9 +225,10 @@ const Landing = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-section)' }}>
+      <section data-testid="testimonials-section" style={{ padding: '5rem 1.2rem', background: 'var(--bg-section)' }}>
         <div className="container" style={{ maxWidth: '1100px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="section-divider" />
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
               نتائج العملاء
             </h2>
@@ -236,17 +239,17 @@ const Landing = () => {
 
           <div className="voice-grid">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="voice-card accent-purple" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div key={idx} className="voice-card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '3px solid var(--blue-elegant)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '0.5rem' }}>
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={14} fill="#FFB800" color="#FFB800" />
+                    <Star key={i} size={14} fill="#fbbf24" color="#fbbf24" />
                   ))}
                 </div>
-                <p className="body-medium" style={{ lineHeight: 1.7, flex: 1 }}>
+                <p className="body-medium" style={{ lineHeight: 1.8, flex: 1, color: 'var(--text-secondary)' }}>
                   "{testimonial.text}"
                 </p>
-                <div style={{ marginTop: '1rem' }}>
-                  <div className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
+                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e2e8f0' }}>
+                  <div className="body-medium" style={{ fontWeight: 600, marginBottom: '0.25rem', color: 'var(--text-primary)' }}>
                     {testimonial.name}
                   </div>
                   <div className="body-small" style={{ color: 'var(--text-muted)' }}>
@@ -260,8 +263,9 @@ const Landing = () => {
       </section>
 
       {/* FAQ Section */}
-      <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
+      <section data-testid="faq-section" style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
+          <div className="section-divider" />
           <h2 className="heading-1" style={{ textAlign: 'center', marginBottom: '3rem' }}>
             الأسئلة الشائعة
           </h2>
@@ -272,7 +276,7 @@ const Landing = () => {
                 <AccordionTrigger className="heading-3" style={{ textAlign: 'right' }}>
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="body-medium" style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                <AccordionContent className="body-medium" style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -284,17 +288,17 @@ const Landing = () => {
       {/* Final CTA */}
       <section className="hero-section" style={{ minHeight: '60vh' }}>
         <div className="hero-content">
-          <h2 className="heading-hero" style={{ marginBottom: '1rem' }}>
+          <h2 className="heading-hero" style={{ marginBottom: '1rem', color: 'white' }}>
             جاهز لاستعادة طاقتك وتركيزك؟
           </h2>
-          <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
-            فقط 6 مقاعد متاحة أسبوعياً • $119 USD
+          <p className="body-large" style={{ marginBottom: '2rem', color: 'rgba(255,255,255,0.8)' }}>
+            فقط 6 مقاعد متاحة أسبوعياً · $119 USD
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button onClick={scrollToBooking} className="btn-primary" style={{ minWidth: '200px' }}>
+            <Button data-testid="cta-book-btn" onClick={scrollToBooking} className="btn-light" style={{ minWidth: '200px' }}>
               احجز الآن
             </Button>
-            <Button onClick={openWhatsApp} className="btn-secondary" style={{ minWidth: '200px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
+            <Button data-testid="cta-whatsapp-btn" onClick={openWhatsApp} className="btn-outline-light" style={{ minWidth: '200px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
               <MessageCircle size={18} />
               اكتب "تقييم"
             </Button>
@@ -303,18 +307,18 @@ const Landing = () => {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '2rem 1.2rem', background: 'var(--text-primary)', color: 'white', textAlign: 'center' }}>
+      <footer className="footer-executive">
         <div className="container">
-          <p className="body-small" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
+          <p className="body-small" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1rem' }}>
             هذه خدمة تعليم صحي وتوجيه، وليست بديلاً عن التشخيص أو العلاج الطبي المباشر.
           </p>
-          <p className="caption" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="caption" style={{ color: 'rgba(255,255,255,0.4)' }}>
             © 2025 دكتور معاوية. جميع الحقوق محفوظة.
           </p>
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(10px); }
