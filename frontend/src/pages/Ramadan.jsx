@@ -108,7 +108,7 @@ const Ramadan = () => {
         <div className="hero-content">
           <div className="hero-announcement">
             <Moon size={14} />
-            <span>عرض رمضان الخاص · خطة 30 يوم لأعلى صحة وأداء في رمضان</span>
+            <span>عرض رمضان الخاص · خطة مخصصة لأعلى صحة وأداء في رمضان</span>
           </div>
           
           <h1 className="heading-hero" style={{ marginBottom: '1rem', color: 'white' }}>
@@ -236,7 +236,7 @@ const Ramadan = () => {
               استشارة رمضان الطبية المتخصصة
             </h2>
             <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
-              خطة 30 يوم مبنية على حالتك الصحية، تحاليلك، ونمط حياتك
+              خطة مخصصة مبنية على حالتك الصحية، تحاليلك، ونمط حياتك
             </p>
           </div>
 

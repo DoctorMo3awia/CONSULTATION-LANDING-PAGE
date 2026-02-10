@@ -22,7 +22,7 @@ const Booking = () => {
   const benefits = [
     'جلسة 45 دقيقة مع طبيب باطنية مقيم',
     'مراجعة شاملة لحالتك الصحية',
-    'خطة 30 يوم طبية مخصصة لك',
+    'خطة طبية مخصصة لك',
     'ملف PDF كامل خلال 24 ساعة',
     '7 أيام دعم عبر واتساب',
   ];
@@ -108,7 +108,7 @@ const Booking = () => {
               border: '1px solid #e2e8f0'
             }}>
               <h3 className="heading-3" style={{ marginBottom: '1.5rem', textAlign: 'center', color: 'var(--blue-elegant)' }}>
-                ماذا تحصل:
+                على ماذا ستحصل:
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {benefits.map((item, idx) => (
