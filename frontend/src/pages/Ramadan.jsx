@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { MessageCircle, Moon, AlertCircle, Coffee, Utensils, Activity, Clock, Brain, Zap } from 'lucide-react';
+import { MessageCircle, Moon, AlertCircle, Coffee, Utensils, Activity, Clock, Brain, Zap, CheckCircle2 } from 'lucide-react';
 
 const Ramadan = () => {
   const navigate = useNavigate();
@@ -70,20 +70,33 @@ const Ramadan = () => {
     },
   ];
 
+  const ramadanBenefits = [
+    'جلسة 45 دقيقة مع طبيب باطنية متخصص في صحة الرجال',
+    'تحليل شامل لنمط حياتك وتحدياتك الخاصة في رمضان',
+    'بناءً على التقييم، سيتم تحديد التحاليل اللازمة لحالتك',
+    'بروتوكول نوم محسّن للصيام (حتى مع السهر والدوام)',
+    'استراتيجية كافيين دقيقة لأعلى طاقة وتركيز',
+    'خطة إفطار + سحور + وجبات ذكية (مطاعم، عزايم، سفر)',
+    'توقيت التمارين الأمثل + برنامج الحد الأدنى الفعال',
+    'بروتوكول ترطيب وأملاح لتجنب الجفاف والصداع',
+    'استراتيجيات للتعامل مع العزايم والمجالس',
+    'ملف PDF كامل خلال 24 ساعة + 7 أيام دعم واتساب',
+  ];
+
   return (
-    <div className="ramadan-page" style={{ background: 'var(--bg-page)', paddingTop: '80px' }}>
+    <div data-testid="ramadan-page" style={{ background: 'var(--bg-page)', paddingTop: '72px' }}>
       {/* Header */}
       <header className="header-nav">
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
-          <div className="logo" style={{ fontFamily: 'SF Mono, monospace', fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }} onClick={() => navigate('/')}>
+          <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'white', cursor: 'pointer', letterSpacing: '0.01em' }} onClick={() => navigate('/')}>
             دكتور معاوية
           </div>
           <div className="nav-actions">
-            <Button onClick={openWhatsApp} className="btn-secondary" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <Button data-testid="ramadan-whatsapp-btn" onClick={openWhatsApp} className="btn-outline-light" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem' }}>
               <MessageCircle size={16} />
               واتساب
             </Button>
-            <Button onClick={goToBooking} className="btn-primary">
+            <Button data-testid="ramadan-book-btn" onClick={goToBooking} className="btn-light" style={{ padding: '0.5rem 1.2rem' }}>
               احجز الآن
             </Button>
           </div>
@@ -93,31 +106,31 @@ const Ramadan = () => {
       {/* Hero Section */}
       <section className="hero-section" style={{ background: 'var(--alternate-gradient-hero-warm)' }}>
         <div className="hero-content">
-          <div className="hero-announcement" style={{ background: 'rgba(152, 125, 156, 0.2)' }}>
+          <div className="hero-announcement">
             <Moon size={14} />
-            <span>عرض رمضان الخاص • خطة 30 يوم لأعلى صحة وأداء في رمضان</span>
+            <span>عرض رمضان الخاص · خطة 30 يوم لأعلى صحة وأداء في رمضان</span>
           </div>
           
-          <h1 className="heading-hero" style={{ marginBottom: '1rem' }}>
+          <h1 className="heading-hero" style={{ marginBottom: '1rem', color: 'white' }}>
             أغلب رواد الأعمال يطلعوا من رمضان أسوأ صحياً
           </h1>
           
-          <p className="body-large" style={{ marginBottom: '2rem', color: 'var(--text-secondary)', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.8 }}>
+          <p className="body-large" style={{ marginBottom: '2rem', color: 'rgba(255,255,255,0.8)', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.8 }}>
             السبب مو الصيام... بل <strong>8 أخطاء</strong> تدمر طاقتك، تركيزك، جسمك، ومزاجك طول الشهر
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-            <Button onClick={goToBooking} className="btn-primary" style={{ minWidth: '220px' }}>
+            <Button data-testid="ramadan-hero-book-btn" onClick={goToBooking} className="btn-light" style={{ minWidth: '220px' }}>
               احجز استشارة رمضان
             </Button>
-            <Button onClick={openWhatsApp} className="btn-secondary" style={{ minWidth: '220px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
+            <Button onClick={openWhatsApp} className="btn-outline-light" style={{ minWidth: '220px', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
               <MessageCircle size={18} />
               اكتب "رمضان"
             </Button>
           </div>
 
-          <p className="body-medium" style={{ color: 'var(--text-muted)' }}>
-            جلسة 45 دقيقة + خطة رمضان كاملة مخصصة لك • $119
+          <p style={{ color: 'rgba(255,255,255,0.6)' }}>
+            جلسة 45 دقيقة + خطة رمضان كاملة مخصصة لك · $119
           </p>
         </div>
       </section>
@@ -126,6 +139,7 @@ const Ramadan = () => {
       <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="section-divider" />
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
               الحقيقة القاسية:
             </h2>
@@ -135,13 +149,14 @@ const Ramadan = () => {
           </div>
 
           <div style={{ 
-            background: 'var(--accent-pink-200)',
+            background: 'var(--accent-blue-200)',
             padding: '2.5rem 2rem',
-            borderRadius: '1.5rem',
-            marginBottom: '2rem'
+            borderRadius: '1rem',
+            marginBottom: '2rem',
+            border: '1px solid rgba(30, 64, 175, 0.1)'
           }}>
             <p className="body-large" style={{ lineHeight: 1.9, textAlign: 'center', fontWeight: 500 }}>
-              المشكلة مو الصيام نفسه... المشكلة في <strong>8 أخطاء شائعة</strong> تحوّل رمضان من فرصة ذهبية للصحة إلى شهر من التدهور الجسدي والذهني.
+              المشكلة مو الصيام نفسه... المشكلة في <strong style={{ color: 'var(--blue-elegant)' }}>8 أخطاء شائعة</strong> تحوّل رمضان من فرصة ذهبية للصحة إلى شهر من التدهور الجسدي والذهني.
             </p>
           </div>
 
@@ -155,6 +170,7 @@ const Ramadan = () => {
       <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-section)' }}>
         <div className="container" style={{ maxWidth: '1100px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="section-divider" />
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
               الأخطاء الـ 8 التي تدمر صحتك في رمضان
             </h2>
@@ -163,7 +179,7 @@ const Ramadan = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {ramadanMistakes.map((mistake, idx) => (
               <div 
                 key={idx}
@@ -172,39 +188,36 @@ const Ramadan = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '1rem',
-                  background: idx % 4 === 0 ? 'var(--accent-purple-200)' : 
-                             idx % 4 === 1 ? 'var(--accent-blue-200)' : 
-                             idx % 4 === 2 ? 'var(--accent-orange-200)' : 
-                             'var(--accent-green-200)'
+                  borderTop: '3px solid var(--blue-elegant)'
                 }}
               >
                 <div style={{ 
                   width: '48px',
                   height: '48px',
-                  borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.6)',
+                  borderRadius: '0.5rem',
+                  background: 'var(--accent-blue-200)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <mistake.icon size={24} color="var(--text-primary)" />
+                  <mistake.icon size={24} color="var(--blue-elegant)" />
                 </div>
                 
                 <div>
                   <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>
                     {mistake.title}
                   </h3>
-                  <p className="body-medium" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  <p className="body-medium" style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1rem' }}>
                     {mistake.description}
                   </p>
                   <div style={{ 
                     padding: '0.75rem 1rem',
-                    background: 'rgba(255, 255, 255, 0.5)',
-                    borderRadius: '0.75rem',
-                    borderRight: '3px solid var(--text-primary)'
+                    background: 'var(--bg-section)',
+                    borderRadius: '0.5rem',
+                    borderRight: '3px solid var(--blue-elegant)'
                   }}>
-                    <p className="body-small" style={{ fontWeight: 500, color: 'var(--text-primary)' }}>
-                      ✓ الحل: {mistake.fix}
+                    <p className="body-small" style={{ fontWeight: 600, color: 'var(--blue-elegant)' }}>
+                      الحل: {mistake.fix}
                     </p>
                   </div>
                 </div>
@@ -218,6 +231,7 @@ const Ramadan = () => {
       <section style={{ padding: '5rem 1.2rem', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="section-divider" />
             <h2 className="heading-1" style={{ marginBottom: '1rem' }}>
               استشارة رمضان الطبية المتخصصة
             </h2>
@@ -227,44 +241,20 @@ const Ramadan = () => {
           </div>
 
           <div style={{ 
-            background: 'var(--accent-blue-200)',
+            background: 'var(--bg-section)',
             padding: '3rem 2rem',
-            borderRadius: '1.5rem',
-            marginBottom: '3rem'
+            borderRadius: '1rem',
+            marginBottom: '3rem',
+            border: '1px solid #e2e8f0'
           }}>
-            <h3 className="heading-2" style={{ marginBottom: '2rem', textAlign: 'center' }}>
+            <h3 className="heading-2" style={{ marginBottom: '2rem', textAlign: 'center', color: 'var(--blue-elegant)' }}>
               ماذا تحصل في استشارة رمضان:
             </h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
-              {[
-                'جلسة 45 دقيقة مع طبيب باطنية متخصص في صحة الرجال',
-                'تحليل شامل لنمط حياتك وتحدياتك الخاصة في رمضان',
-                'بناءً على التقييم، سيتم تحديد التحاليل اللازمة لحالتك',
-                'بروتوكول نوم محسّن للصيام (حتى مع السهر والدوام)',
-                'استراتيجية كافيين دقيقة لأعلى طاقة وتركيز',
-                'خطة إفطار + سحور + وجبات ذكية (مطاعم، عزايم، سفر)',
-                'توقيت التمارين الأمثل + برنامج الحد الأدنى الفعال',
-                'بروتوكول ترطيب وأملاح لتجنب الجفاف والصداع',
-                'استراتيجيات للتعامل مع العزايم والمجالس',
-                'ملف PDF كامل خلال 24 ساعة + 7 أيام دعم واتساب',
-              ].map((item, idx) => (
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.25rem' }}>
+              {ramadanBenefits.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ 
-                    minWidth: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    background: 'var(--text-primary)',
-                    color: 'white',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    marginTop: '0.125rem'
-                  }}>
-                    ✓
-                  </div>
+                  <CheckCircle2 size={20} color="var(--blue-elegant)" style={{ minWidth: '20px', marginTop: '0.2rem' }} />
                   <p className="body-medium" style={{ flex: 1, lineHeight: 1.7 }}>
                     {item}
                   </p>
@@ -274,13 +264,14 @@ const Ramadan = () => {
           </div>
 
           <div style={{ 
-            background: 'var(--accent-orange-200)',
+            background: 'var(--accent-blue-200)',
             padding: '2rem',
-            borderRadius: '1rem',
+            borderRadius: '0.75rem',
             textAlign: 'center',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+            border: '1px solid rgba(30, 64, 175, 0.1)'
           }}>
-            <p className="heading-2" style={{ marginBottom: '0.5rem' }}>
+            <p className="heading-2" style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
               $119 فقط
             </p>
             <p className="body-medium" style={{ color: 'var(--text-muted)' }}>
@@ -290,7 +281,7 @@ const Ramadan = () => {
 
           <div style={{ textAlign: 'center' }}>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Button onClick={goToBooking} className="btn-primary" style={{ minWidth: '220px', padding: '1rem 2rem' }}>
+              <Button data-testid="ramadan-cta-book-btn" onClick={goToBooking} className="btn-primary" style={{ minWidth: '220px', padding: '1rem 2rem' }}>
                 احجز استشارة رمضان
               </Button>
               <Button onClick={openWhatsApp} className="btn-secondary" style={{ minWidth: '220px', padding: '1rem 2rem', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
@@ -308,25 +299,25 @@ const Ramadan = () => {
       {/* Results */}
       <section className="hero-section" style={{ minHeight: '60vh', background: 'var(--alternate-gradient-hero-warm)' }}>
         <div className="hero-content">
-          <h2 className="heading-hero" style={{ marginBottom: '1.5rem' }}>
+          <h2 className="heading-hero" style={{ marginBottom: '1.5rem', color: 'white' }}>
             النتيجة؟
           </h2>
-          <p className="body-large" style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.9 }}>
+          <p className="body-large" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2rem', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.9 }}>
             بدل ما تطلع من رمضان <strong>متعب، زايد وزن، ومتوتر</strong>... تطلع منه بـ <strong>طاقة عالية، تركيز أفضل، جسم محسّن، ومزاج مستقر</strong>.
           </p>
-          <Button onClick={goToBooking} className="btn-primary" style={{ minWidth: '250px', padding: '1rem 2rem' }}>
+          <Button data-testid="ramadan-final-book-btn" onClick={goToBooking} className="btn-light" style={{ minWidth: '250px', padding: '1rem 2rem' }}>
             ابدأ الآن - $119
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '2rem 1.2rem', background: 'var(--text-primary)', color: 'white', textAlign: 'center' }}>
+      <footer className="footer-executive">
         <div className="container">
-          <p className="body-small" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
+          <p className="body-small" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1rem' }}>
             هذه خدمة تعليم صحي وتوجيه، وليست بديلاً عن التشخيص أو العلاج الطبي المباشر.
           </p>
-          <p className="caption" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="caption" style={{ color: 'rgba(255,255,255,0.4)' }}>
             © 2025 دكتور معاوية. جميع الحقوق محفوظة.
           </p>
         </div>
